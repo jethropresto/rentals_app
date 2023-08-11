@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const interestListModel = require('./models/interest_list')
 
 require('dotenv').config();
 
@@ -17,6 +18,15 @@ connection.once('open', () => {
   console.log("MongoDB database connection established successfully!");
 })
 
+app.get("/getInterestList", async (req, res) => {
+  const allInterestList = await interestListModel.find({}, (err, result) => {
+    if (err) {
+      res.json(err);
+    } else {
+      res.json(result);
+    }
+  })
+})
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
