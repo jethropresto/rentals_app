@@ -5,11 +5,11 @@ const interestListSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    phone_number: {
+    phoneNumber: {
         type: String,
         required: true
     },
-    event_type: {
+    eventType: {
         type: String,
         required: true
     },
@@ -37,11 +37,11 @@ const interestListSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    last_updated: {
+    lastUpdated: {
         type: String,
         required: true
     } 
 });
 
-const interestListModel = mongoose.model("interest_list", interestListSchema)
-module.exports = interestListModel
+const interestListModel = mongoose.model("interest lists", interestListSchema);
+module.exports = interestListModel;

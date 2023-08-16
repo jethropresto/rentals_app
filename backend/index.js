@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const interestListModel = require('./models/interest_list')
+const interestListModel = require('./models/interest_list');
 
 require('dotenv').config();
 
@@ -19,15 +19,25 @@ connection.once('open', () => {
 })
 
 app.get("/getInterestList", async (req, res) => {
-  const allInterestList = await interestListModel.find({}, (err, result) => {
-    if (err) {
-      res.json(err);
-    } else {
-      res.json(result);
-    }
-  })
+  try{
+    const interest = await interestListModel.find({});
+    res.json(interest);
+    console.log(interest);
+  } catch (err) {
+      console.log(err);
+    } 
 })
 
+app.post("/interest", async (req, res) => {
+  try{
+    const interest = await interestListModel.create(req.body)
+    res.status(200).json(interest);
+  } catch (error){
+    console.log(error.message);
+    res.status(500).json({message: error.message})
+  }
+})
+  
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
 });
