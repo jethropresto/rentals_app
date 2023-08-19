@@ -18,7 +18,7 @@ connection.once('open', () => {
   console.log("MongoDB database connection established successfully!");
 })
 
-app.get("/getInterestList", async (req, res) => {
+app.get("/interestList", async (req, res) => {
   try{
     const interest = await interestListModel.find({});
     res.json(interest);
@@ -28,7 +28,12 @@ app.get("/getInterestList", async (req, res) => {
     } 
 })
 
-app.post("/interest", async (req, res) => {
+app.get("/", async (req, res) => {
+  res.send("FCSC Rentals");
+  console.log("Welcome to FCSC Rentals!");
+})
+
+app.post("/newInterest", async (req, res) => {
   try{
     const interest = await interestListModel.create(req.body)
     res.status(200).json(interest);
