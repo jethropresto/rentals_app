@@ -26,16 +26,13 @@ const interestListSchema = new mongoose.Schema({
         required: true
     },
     quoted: {
-        type: String,
-        required: true
+        type: String
     },
     tourDate: {
-        type: String,
-        required: true
+        type: String
     },
     status: {
-        type: String,
-        required: true
+        type: String
     },
     lastUpdated: {
         type: String,

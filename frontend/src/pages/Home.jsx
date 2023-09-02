@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
 
 function Home() {
   return (
@@ -7,7 +8,7 @@ function Home() {
         
         <div>
           <Link to="/interest_list">
-            <button type="button" >Interest List</button>
+            <Button type="button" >Interest List</Button>
           </Link>
           
         </div>
