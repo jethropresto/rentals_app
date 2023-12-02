@@ -8,40 +8,42 @@ function InterestList() {
 
     const [interestList, setInterestList] = useState([]);
     const [isOpen, setOpen] = useState(true);
-    const [buttonText, setButtonText] = useState("Show Interest List");
+    const [buttonText, setButtonText] = useState("Close");
 
     const handleClick = () => {
-        setOpen(!isOpen);
-        if (!isOpen) {
-            setButtonText("Close");
+        if(isOpen===false){
+            retrieveList();
+            setButtonText("Close")
         } else {
-            setButtonText("Show Interest List");
-        };
+            setButtonText("Show Interest List")
+        }
+        setOpen(!isOpen)
     };
-
-    useEffect(() => {
+    
+    const retrieveList = () => {
         axios.get('http://localhost:5000/interestList')
         .then(interestList => setInterestList(interestList.data))
-        .catch(err => console.log(err))
-    }, []);
+        .catch(err => console.log(err));
+    };
+
+    useEffect(retrieveList, []);
 
 
     return (
-        <div className="h-screen sm:px-6 w-full">
+        <div className="h-screen sm:px-6 w-full bg-gray-100">
             <div className="h-full flex flex-col">
-                <div className="px-4 md:px-10 py-4 md:py-7">
-                    <div className="flex items-center justify-between">
-                        <p tabindex="0" className="sm:text-lg md:text-xl lg:text-2xl font-bold text-gray-800">Interest List</p>
-                        <div className="py-3 px-4 flex">
-                            <NewInterestModal />
-                        </div>
+                <div className="justify-between mt-4 mb-3">
+                    <h1 className="font-bold text-gray-800">Interest List</h1>
+                    <div className="flex justify-between">
+                        <Button onClick={handleClick}>{buttonText}</Button>
+                        <NewInterestModal />
                     </div>
                 </div>
 
-                <div className="relative overflow-y-auto border">
+                <div className="relative overflow-y-auto">
 
                     {isOpen && <Table className="border border-spacing-4">
-                        <thead className="mt-3 border-b text-sm uppercase bg-gray-100 sticky top-0">
+                        <thead className="mt-3 text-sm uppercase sticky top-0">
                             <tr>
                                 <th> Name </th>
                                 <th> Phone Number </th>
