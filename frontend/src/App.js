@@ -6,46 +6,46 @@ import { LuLayoutDashboard, LuCalendarRange, LuSettings, LuListTodo } from 'reac
 import { TbReportAnalytics } from 'react-icons/tb';
 import { HiOutlineClipboardDocumentList } from 'react-icons/hi2';
 
-
 function App() {
 
-  return (
+return (
     <BrowserRouter>
-      <main className="App flex h-screen">
-        <Sidebar >
-            <SidebarItem
-              icon={<LuLayoutDashboard size={20} />}
-              text="Dashboard"
-            />
+        <main className="App flex h-screen">
+            <Sidebar >
+                <SidebarItem
+                    icon={<LuLayoutDashboard size={20} />}
+                    text="Dashboard"
+                    link="/"
+                />
 
-            <SidebarItem 
-              icon={<LuCalendarRange size={20} />}
-              text="Calendar" 
-            />
+                <SidebarItem 
+                    icon={<LuCalendarRange size={20} />}
+                    text="Calendar" 
+                />
 
-            <SidebarItem
-              icon={<LuListTodo size={20} />}
-              text="Upcoming"
-            />
+                <SidebarItem
+                    icon={<LuListTodo size={20} />}
+                    text="Upcoming"
+                />
 
-            <SidebarItem
-              icon={<TbReportAnalytics size={20} />}
-              text="Analytics"
-            />
+                <SidebarItem
+                    icon={<TbReportAnalytics size={20} />}
+                    text="Analytics"
+                />
+                
+                <SidebarItem 
+                    icon={<HiOutlineClipboardDocumentList size={20} />}
+                    text="Documents"
+                />
+
+                <SidebarItem
+                    icon={<LuSettings size={20} />}
+                    text="Settings"
+                />
+            </Sidebar>
             
-            <SidebarItem 
-              icon={<HiOutlineClipboardDocumentList size={20} />}
-              text="Documents"
-            />
-
-            <SidebarItem
-              icon={<LuSettings size={20} />}
-              text="Settings"
-            />
-          </Sidebar>
-          
-          <Pages/>
-      </main>
+            <Pages/>
+        </main>
     </BrowserRouter>
 
    

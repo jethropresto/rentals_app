@@ -145,7 +145,12 @@ function NewInterestModal() {
                                 <Col>
                                     <Form.Group className="mb-3" controlId="phone number">
                                         <Form.Label>Phone Number</Form.Label>
-                                        <Form.Control type="text" placeholder="(111) 111-1111" value={phoneNumber} onChange={phoneNumberChangedHandler}/>
+                                        <Form.Control 
+                                            type="text" 
+                                            placeholder="(111) 111-1111" 
+                                            value={phoneNumber} 
+                                            onChange={phoneNumberChangedHandler}
+                                        />
                                     </Form.Group>
                                 </Col>
                             </Row>
@@ -154,7 +159,12 @@ function NewInterestModal() {
                                 <Col>
                                     <Form.Group className="mb-3" controlId="event type">
                                         <Form.Label>Event Type</Form.Label>
-                                        <Form.Control type="text" placeholder="Birthday, Wedding, Anniversary, etc." value={eventType} onChange={eventTypeChangedHandler}/>
+                                        <Form.Control 
+                                            type="text" 
+                                            placeholder="Birthday, Wedding, Anniversary, etc." 
+                                            value={eventType} 
+                                            onChange={eventTypeChangedHandler}
+                                        />
                                     </Form.Group>
                                 </Col>
                             </Row>
@@ -164,7 +174,12 @@ function NewInterestModal() {
                                 <Col>
                                     <Form.Group className="mb-3" controlId="date">
                                         <Form.Label>Date</Form.Label>
-                                        <Form.Control type="text" placeholder="1/20/2024" value={date} onChange={dateChangedHandler}/>
+                                        <Form.Control 
+                                            type="text" 
+                                            placeholder="1/20/2024" 
+                                            value={date} 
+                                            onChange={dateChangedHandler}
+                                        />
                                     </Form.Group>
                                 </Col>
 
@@ -207,7 +222,12 @@ function NewInterestModal() {
                                 <Col>
                                     <Form.Group className="mb-3" controlId="tour date">
                                         <Form.Label>Tour Date</Form.Label>
-                                        <Form.Control type="text" placeholder="1/20/2024" value={tourDate} onChange={tourDateChangedHandler} />
+                                        <Form.Control 
+                                            type="text" 
+                                            placeholder="1/20/2024" 
+                                            value={tourDate} 
+                                            onChange={tourDateChangedHandler} 
+                                        />
                                     </Form.Group>
                                 </Col>
                             </Row>
